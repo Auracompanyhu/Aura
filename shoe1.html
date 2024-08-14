@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="feketelogo_feherpolora.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Shoe 1 - Aura Shoes</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-icon">
+            <img src="feketelogo_feherpolora.png" alt="Menu">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><h1>Home</h1></a></li>
+            <li><a href="Women.html"><h1>Women</h1></a></li>
+            <li><a href="Man.html"><h1>Men</h1></a></li>
+            <li><a href="Kids.html"><h1>Kids</h1></a></li>
+        </ul>
+        <div class="logo">
+            <a href="#"><img src="betufeketelogo_feherruhara.png"></a>
+        </div>
+        <ul class="nav-links icons">
+            <a href="index.html"><i class="fa fa-home" style="font-size:26px"></i></a>
+            <a href="#"><i class="fa fa-search" style="font-size:26px"></i></a>
+            <a href="#"><i class="fa fa-user" style="font-size:26px"></i></a>
+            <a href="cart.html"><i class="fa fa-shopping-cart" style="font-size:26px"></i> <span id="cart-count">0</span></a>
+        </ul>
+    </nav>
+
+    <div class="product-details">
+        <img src="https://www.youngla.com/cdn/shop/files/4181_black-wash_001_08_06_floor_368f0dbe-5e0c-4f23-8335-44995e5c1430.jpg?v=1722454782&width=700" alt="Shoe 1" width="300">
+        <h1>Fasz</h1>
+        <p>Price: $50</p>
+        <label for="size">Select size:</label>
+        <select id="size">
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+            <option value="xxl">XXL</option>
+        </select>
+        <button onclick="addToCart('Fasz', 50)">Add to Cart</button>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

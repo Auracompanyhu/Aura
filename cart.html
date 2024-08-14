@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="feketelogo_feherpolora.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Your Cart - Aura Shoes</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-icon">
+            <img src="feketelogo_feherpolora.png" alt="Menu">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><h1>Home</h1></a></li>
+            <li><a href="Women.html"><h1>Women</h1></a></li>
+            <li><a href="Man.html"><h1>Men</h1></a></li>
+            <li><a href="Kids.html"><h1>Kids</h1></a></li>
+        </ul>
+        <div class="logo">
+            <a href="#"><img src="betufeketelogo_feherruhara.png"></a>
+        </div>
+        <ul class="nav-links icons">
+            <a href="index.html"><i class="fa fa-home" style="font-size:26px"></i></a>
+            <a href="#"><i class="fa fa-search" style="font-size:26px"></i></a>
+            <a href="#"><i class="fa fa-user" style="font-size:26px"></i></a>
+            <a href="cart.html"><i class="fa fa-shopping-cart" style="font-size:26px"></i> <span id="cart-count">0</span></a>
+        </ul>
+    </nav>
+
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="cart-total">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <script src="cart.js"></script>
+    <script>
+        function updateCartPage() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalContainer = document.getElementById('cart-total');
+
+            let total = 0;
+            cartItemsContainer.innerHTML = '';
+
+            cart.forEach(product => {
+                total += product.price * product.quantity;
+
+                const li = document.createElement('li');
+                li.innerText = `${product.name} (Size: ${product.size}) - $${product.price} x ${product.quantity}`;
+                cartItemsContainer.appendChild(li);
+            });
+
+            cartTotalContainer.innerText = total;
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+
+            alert('Thank you for your purchase!');
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartPage();
+            updateCartDisplay();
+        }
+
+        document.addEventListener('DOMContentLoaded', updateCartPage);
+    </script>
+</body>
+</html>
